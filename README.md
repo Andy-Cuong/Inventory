@@ -1,7 +1,7 @@
 Inventory app
 ==================================
 
-Solution code for Android Basics with Compose.
+Solution code by learner for [Android Basics with Compose: Inventory App](https://github.com/google-developer-training/basic-android-kotlin-compose-training-inventory-app).
 
 Introduction
 ------------
