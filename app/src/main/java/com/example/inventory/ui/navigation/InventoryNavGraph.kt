@@ -48,8 +48,11 @@ fun InventoryNavHost(
         composable(route = HomeDestination.route) {
             HomeScreen(
                 navigateToItemEntry = { navController.navigate(ItemEntryDestination.route) },
-                navigateToItemUpdate = {
-                    navController.navigate("${ItemDetailsDestination.route}/${it}")
+                navigateToItemUpdate = { itemId ->
+                    // pass the itemId as NavArgument to the destination.
+                    // This argument will be saved in the SavedStateHandle so that the ViewModel
+                    // can retrieve it
+                    navController.navigate("${ItemDetailsDestination.route}/${itemId}")
                 }
             )
         }
@@ -60,9 +63,9 @@ fun InventoryNavHost(
             )
         }
         composable(
-            route = ItemDetailsDestination.routeWithArgs,
-            arguments = listOf(navArgument(ItemDetailsDestination.itemIdArg) {
-                type = NavType.IntType
+            route = ItemDetailsDestination.routeWithArgs, // Define the route with argument placeholder
+            arguments = listOf(navArgument(ItemDetailsDestination.itemIdArg) { // The key used to retrieve the data from SaveStateHandle
+                type = NavType.IntType // The type of the data corresponding to this key
             })
         ) {
             ItemDetailsScreen(
