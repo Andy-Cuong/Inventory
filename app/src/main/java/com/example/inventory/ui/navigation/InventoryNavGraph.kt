@@ -64,7 +64,7 @@ fun InventoryNavHost(
         }
         composable(
             route = ItemDetailsDestination.routeWithArgs, // Define the route with argument placeholder
-            arguments = listOf(navArgument(ItemDetailsDestination.itemIdArg) { // The key used to retrieve the data from SaveStateHandle
+            arguments = listOf(navArgument(ItemDetailsDestination.ITEM_ID_ARG) { // The key used to retrieve the data from SaveStateHandle
                 type = NavType.IntType // The type of the data corresponding to this key
             })
         ) {

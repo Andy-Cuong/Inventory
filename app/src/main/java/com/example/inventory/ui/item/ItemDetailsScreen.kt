@@ -64,8 +64,8 @@ import com.example.inventory.ui.theme.InventoryTheme
 object ItemDetailsDestination : NavigationDestination {
     override val route = "item_details"
     override val titleRes = R.string.item_detail_title
-    const val itemIdArg = "itemId"
-    val routeWithArgs = "$route/{$itemIdArg}" // {itemId} as the placeholder for NavArgument
+    const val ITEM_ID_ARG = "itemId"
+    val routeWithArgs = "$route/{$ITEM_ID_ARG}" // {itemId} as the placeholder for NavArgument
                                             // (comes after a slash)
 }
 

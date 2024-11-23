@@ -37,7 +37,7 @@ class ItemDetailsViewModel(
     // SavedStateHandle is a key-value map specifically built for ViewModel to write and retrieve
     // data from saved state. In this case, it stores the itemId argument passed down when navigating
     // from HomeScreen to ItemDetailsScreen, so the ViewModel can retrieve it even after changing screen
-    private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.itemIdArg])
+    private val itemId: Int = checkNotNull(savedStateHandle[ItemDetailsDestination.ITEM_ID_ARG])
 
     val uiStateFlow: StateFlow<ItemDetailsUiState> = itemsRepository.getItemStream(itemId)
         .filterNotNull()
